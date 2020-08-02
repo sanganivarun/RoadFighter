@@ -17,7 +17,7 @@ public class BGMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(transform.position.y < -12f)
+        if(transform.position.y < clammpos)
         {
             transform.position = new Vector2(0f, 13f);
         }
@@ -25,7 +25,5 @@ public class BGMovement : MonoBehaviour
         {
             transform.position = new Vector2(0f, transform.position.y - Time.deltaTime * speed);
         }
-
-
     }
 }
