@@ -11,4 +11,12 @@ public class Enemy : MonoBehaviour
         transform.position = new Vector2(transform.position.x, transform.position.y - Time.deltaTime * speed);
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.tag == "Finish")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

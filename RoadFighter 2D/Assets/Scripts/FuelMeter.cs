@@ -12,7 +12,7 @@ public class FuelMeter : MonoBehaviour
         FuelMeter.fm = this;
     }
 
-    public float fuelValue = 100;
+    private float fuelValue = 100;
 
     private float globalSpeed = 2f;
 
@@ -27,6 +27,18 @@ public class FuelMeter : MonoBehaviour
     {
         DecrementFuelValue();
         fuelMeterText.text = fuelValue.ToString();
+    }
+
+    public void IncrementFuel()
+    {
+        if(fuelValue > 85)
+        {
+            fuelValue = 100;
+        }
+        else
+        {
+            fuelValue += 15;
+        }
     }
 
 }

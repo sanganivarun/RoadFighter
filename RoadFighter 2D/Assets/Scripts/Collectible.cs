@@ -16,10 +16,15 @@ public class Collectible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("tag: " + col);
         if(col.tag == "Player")
         {
             Debug.Log("Collision Succesful");
-            FuelMeter.fm.fuelValue += 15;
+            FuelMeter.fm.IncrementFuel();
+            Destroy(gameObject);
+        }
+        else if(col.tag == "Finish")    
+        {
             Destroy(gameObject);
         }
     }

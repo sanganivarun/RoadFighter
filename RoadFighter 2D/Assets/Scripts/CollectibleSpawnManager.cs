@@ -19,11 +19,9 @@ public class CollectibleSpawnManager : MonoBehaviour
 
     public float timer;
 
-    private float collectibleTimer = 0;
+    private float collectibleTimer = 3f;
     
     public float maxTimer;
-
-    private bool spawnedCollectible = false;
 
     private List<Vector2> spawnPointsList = new List<Vector2> { new Vector2(0, 8), new Vector2(1.5f, 8), new Vector2(-1.5f, 8) };
 
@@ -55,7 +53,7 @@ public class CollectibleSpawnManager : MonoBehaviour
 
     IEnumerator SpawnCollectible()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(collectibleTimer);
 
         var newObject = collectiblePrefab;
         Instantiate(newObject, GetRandomSpawnPoint(), Quaternion.identity);
