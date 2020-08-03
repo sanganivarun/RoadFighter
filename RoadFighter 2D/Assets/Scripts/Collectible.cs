@@ -19,6 +19,7 @@ public class Collectible : MonoBehaviour
         if(col.tag == "Player")
         {
             Debug.Log("Collision Succesful");
+            FuelMeter.fm.fuelValue += 15;
             Destroy(gameObject);
         }
     }
